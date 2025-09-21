@@ -92,3 +92,23 @@
 - `DELETE /api/v1/items/{id}/` – удаление  
 - `GET /api/v1/access-rules/` – управление правилами доступа 
 (только для админов)
+
+## Запуск проекта
+
+Запуск докера
+```shell
+docker compose up --build
+```
+
+```shell
+docker compose exec backend python manage.py migrate 
+```
+
+```shell
+docker compose exec backend python manage.py collectstatic
+```
+
+Для работы с тестовыми данными необходимо запустить команду
+```shell
+docker compose exec backend python manage.py seed_access
+```
